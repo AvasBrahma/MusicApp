@@ -1,0 +1,76 @@
+
+/*  Header Nav Menu Styling  */
+
+.header-menu{
+    width: 75%;
+    background:rgb(244, 137, 250) ;
+    z-index: 2;
+}
+
+.header-menu nav{
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-menu nav ul{
+    display: flex;
+}
+/*  Nav bar menus text styling  */
+.header-menu nav ul li{
+    position: relative;
+    list-style-type: none;
+    font-size: 13px;
+    color: #000000;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.header-menu nav ul li:hover{
+    color: #ffffff;
+}
+
+/* Nav Bar Search Input Styling */
+
+.header-menu nav .search-section{
+    position: relative;
+    width: 40%;
+    padding: 1px 40px;
+    border-radius: 20px;
+    color: #5ea0f0;
+}
+
+.header-menu nav .search-section i{
+    font-size: 13px;
+    padding: 3px 0px 0px 10px;
+}
+
+.header-menu nav .search-section input{
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0px 10px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+/* Nav Bar User Profile Styling  */
+
+.header-menu nav .user-profile{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header-menu nav .user-profile img{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px #1a1919;
+}
