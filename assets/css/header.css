@@ -2,9 +2,10 @@
 /*  Header Nav Menu Styling  */
 
 .header-menu{
-    width: 75%;
-    background:rgb(244, 137, 250) ;
+    width: 100%;
+    /* background:rgb(244, 137, 250) ; */
     z-index: 2;
+    /* border: 2px solid black; */
 }
 
 .header-menu nav{

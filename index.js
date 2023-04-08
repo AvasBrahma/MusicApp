@@ -5,11 +5,13 @@ const expressLayouts=require('express-ejs-layouts');
 
 app.use(expressLayouts);
 
+app.use(express.static('./assets'))
+
+
 //setting the layout extract styles & scripts so that script & style tag will move to specific place
 app.set('layout extractStyles', true);
-app.set('layouts extractScripts', true);
+app.set('layout extractScripts', true);
 
-app.use(express.static('./assets'))
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
