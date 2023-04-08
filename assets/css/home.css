@@ -1,22 +1,49 @@
 
 .top-trending-section{
+    position: relative;
     width: 100%;
-    height: 140px;
+    height: 300px;
     margin: auto;
     padding-top: 20px;
-    border: 2px solid black;
-    background: rgb(185, 230, 239);
+    background: rgb(0, 133, 159);
 }
 
-.top-trending-section h1{
+.top-trending-section .back-video{
+     position: absolute;
+      border: 2px solid black;
+      width: 100%;
+      height: 320px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+}
+
+video{
+    object-fit: fill;
+}
+
+.feature-box{  
+  position: absolute;
+  bottom: 0;   
+  margin: 7px 5px;
+}
+.top-trending-section .feature-box h1{
     font-size: 25px;
     font-weight: 600;
 }
 
-.top-trending-section p{
-    font-size: 11px;
+.trending-indicatior{
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    margin: auto;
+    float: right;
+    color: rgb(241, 101, 101);
+}
+.top-trending-section .feature-box p{
+    font-size: 16px;
     font-weight: 400;
-    color: rgb(73, 73, 88);
+    color: rgb(9, 9, 9);
     margin: 5px;
 }
 .top-trending-section .play-add-Favourite{
@@ -35,10 +62,11 @@
 
 .popular-songs-section{
     width: 100%;
+    left: 0;
+    right: 0;
     height: auto;
     margin: auto;
     margin-top: 15px;
-    border: 2px solid red;
 }
 .popular-songs-section .title-section{
     display: flex;
@@ -58,11 +86,10 @@
 .popular-songs-section .popular-song-container{
     width: 100%;
     height: 150px;
-    margin-top: 15px;
+    margin-top: 2px;
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-
 }
 
 .popular-songs-section .popular-song-container::-webkit-scrollbar{
@@ -70,12 +97,13 @@
 }
 
 .popular-songs-section .popular-song-container li{
-    min-width: 100px;
-    height: 140px;
+    min-width: 120px;
+    height: 150px;
     list-style-type: none;
     margin-right: 10px;
     transition: .3s linear;
-    border: 2px solid black;
+    background-color: black;
+
 }
 
 .popular-songs-section .popular-song-container li:hover{
@@ -84,8 +112,8 @@
 
 .popular-songs-section .popular-song-container li .song-action{
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 116px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,14 +135,17 @@
 }
 
 .popular-songs-section .popular-song-container li h5{
-    padding: 5px 0px 0px 5px;
-    line-height: 15px;
-    font-size: 10px;
+    margin: auto;
+    padding: 2px 21px;
+    align-items: center;
+    font-size: 12px;
+    right: 0;
+    color: #ffffff;
 }
 
 .popular-songs-section .popular-song-container li h5 .subtitle{
-    font-size: 9px;
-    color: rgb(118, 119, 121);
+    font-size: 10px;
+    color: rgb(255, 255, 255);
 }
 
 /* Popular Artist Section Stylyiing */

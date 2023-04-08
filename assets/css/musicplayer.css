@@ -1,0 +1,161 @@
+.player-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    border: 2px solid black;
+    margin: auto;
+    bottom: 0;
+    position: fixed;
+    min-height: 90px;
+    left: 0;
+    right: 0;
+    background: rgb(228, 184, 243);
+}
+.player-container img{
+    width: 43px;
+    height: 43px;
+}
+
+.player-container h5 {
+    width: 130px;
+    font-size: 13px;
+    margin-left: 15px;
+    color: #000000;
+    line-height: 17px;
+}
+
+.player-container h5 .subtitle{
+    font-size: 11px;
+    color: #0f1011;
+ }
+ .player-container .icon{
+    font-size: 20px;
+    color: #010000;
+    margin: 0px 20px 0px 40px;
+    outline: none;
+ }
+ .player-container .icon i{
+  cursor: pointer;
+  outline: none;
+ }
+
+ .player-container .icon i:nth-child(2){
+    padding: 1px 4px 0px 6px;
+    margin: 0px 5px;
+ }
+
+
+    .player-container span {
+        color: #000000;
+        width: 32px;
+        font-size: 11px;
+        font-weight: 400;
+    }
+    .player-container #currentStart{
+        margin: 0px 0px 0px 20px;
+    }
+    
+    .player-container .bar {
+        position: relative;
+        width: 43%;
+        height: 2px;
+        background: rgb(105, 105, 170,.1);
+        margin: 0px 15px 0px 10px;
+    }
+    .player-container .bar .bar2{
+       position: absolute;
+       background: #000000;
+       width: 0%;
+       height: 100%;
+       top: 0;
+       transition: 1s linear;
+    }
+    .player-container .bar .dot{
+       position: absolute;
+       width: 5px;
+       height: 5px;
+       background: #000000;
+       border-radius: 50%;
+       left: 0%;
+       top: -1px;
+       transition: 1s linear;
+    }
+    .player-container .bar .dot::before{
+      content: '';
+       position: absolute;
+       width: 15px;
+       height: 15px;
+       border:1px solid #000000;
+       border-radius: 50%;
+       left: -6px;
+       top: -6px;
+      box-shadow: inset 0px 0px 3px #000000;
+    }
+    .player-container .bar input{
+       position: absolute;
+       width: 100%;
+       top: -6px;
+       left: 0;
+       cursor: pointer;
+       z-index: 99999999;
+       transition: 3s linear;
+       opacity: 0;
+    }
+
+    .player-container .vol{
+        position: relative;
+        width: 100px;
+        height: 2px;
+        margin-left: 50px;
+       background: rgb(105, 105, 170,.1); 
+      }
+      .player-container  .vol #vol_icon{
+      position: absolute;
+      color: #000000;
+      font-size: 25px;
+      top: -12px;
+      left: -30px;
+      }
+      .player-container .vol input{
+          position: absolute;
+          width: 100%;
+          top: -7px;
+          left: 0;
+          cursor: pointer;
+          z-index: 99999999;
+          transition: 3s linear;
+          opacity: 0;
+        
+       }
+      
+       .player-container .vol .vol_bar{
+          position: absolute;
+          background: #000000;
+          width: 0%;
+          height: 100%;
+          top: 0;
+          transition: 1s linear; 
+       }
+       .player-container .vol .dot{
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          background: #000000;
+          border-radius: 50%;
+          left: 0%;
+          top: -1px;
+          transition: 1s linear;
+       }
+       .player-container .vol .dot::before{
+           content: '';
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          border:1px solid #000000;
+          border-radius: 50%;
+          left: -6px;
+          top: -6px;
+         box-shadow: inset 0px 0px 3px #000000;
+       }
+      
