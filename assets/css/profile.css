@@ -1,0 +1,9 @@
+form input{
+    display: block;
+    margin: 12px 2px;
+}
+
+label{
+    text-align: right; 
+    float:left;
+}
