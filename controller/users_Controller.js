@@ -70,3 +70,13 @@ module.exports.createSession=async function(req, res){
 return res.redirect('/');
 
 }
+
+module.exports.myFavourite=function(req, res){
+
+    console.log('My Favourite Controller...........')
+    if(req.isAuthenticated()){
+         res.render('favourite');
+    }else{
+        return res.render('signIn');
+    }
+}

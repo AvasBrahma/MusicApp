@@ -10,7 +10,7 @@
     min-height: 90px;
     left: 0;
     right: 0;
-    background: rgb(228, 184, 243);
+   background-color: #fedafb;
 }
 .player-container img{
     width: 43px;
@@ -159,3 +159,14 @@
          box-shadow: inset 0px 0px 3px #000000;
        }
       
+       .add-to-favourite{
+         margin:auto;
+         right: 0;
+         font-size: 32px;
+       }
+
+
+       .addToFvt-Icon{
+         color: #000000;
+         cursor: pointer;
+       }
