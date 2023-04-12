@@ -2,20 +2,17 @@
 .top-trending-section{
     position: relative;
     width: 100%;
-    height: 300px;
-    margin: auto;
-    padding-top: 20px;
+    margin-top: 1px;
+    height: 330px;
     background: rgb(0, 133, 159);
+    border: 2px solid black;
 }
 
 .top-trending-section .back-video{
-     position: absolute;
-      border: 2px solid black;
+      position: absolute;
+      border: 2px solid rgb(0, 0, 0);
       width: 100%;
-      height: 320px;
-      margin: auto;
-      top: 0;
-      bottom: 0;
+      height: 330px;
 }
 
 video{
@@ -36,7 +33,7 @@ video{
     position: absolute;
     right: 0;
     font-size: 18px;
-    margin: auto;
+    margin: 2px 6px;
     float: right;
     color: rgb(241, 101, 101);
     cursor: default;
@@ -86,12 +83,11 @@ video{
 
 .popular-songs-section .popular-song-container{
     width: 100%;
-    height: 160px;
+    height: 220px;
     margin-top: 2px;
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    background-color: #feeeff;
 }
 
 .popular-songs-section .popular-song-container::-webkit-scrollbar{
@@ -100,8 +96,8 @@ video{
 
 .popular-songs-section .popular-song-container li{
     margin-top: 4px;
-    min-width: 120px;
-    height: 150px;
+    min-width: 170px;
+    height: 215px;
     list-style-type: none;
     margin-right: 10px;
     transition: .3s linear;
@@ -118,8 +114,8 @@ video{
 
 .popular-songs-section .popular-song-container li .song-action{
     position: relative;
-    width: 120px;
-    height: 116px;
+    width: 170px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +126,7 @@ video{
 }
 .popular-songs-section .popular-song-container li .song-action i{
      position: absolute;
-     font-size: 20px;
+     font-size: 50px;
      cursor: pointer;
      transition: .3s linear;
      opacity: 0;
@@ -146,7 +142,7 @@ video{
     top: 0;
     right: 0;
     margin: 2px 3px;
-    font-size: 30px;
+    font-size: 45px;
     cursor: pointer;
        
 }
@@ -159,13 +155,11 @@ video{
     color: #ffffff;
     background: #000000;
 }
-
 .popular-songs-section .popular-song-container li h5 .subtitle{
     font-size: 10px;
     color: rgb(255, 255, 255);
     background-color: #000000;
 }
-
 /* Popular Artist Section Stylyiing */
 
 .popular-artist{
@@ -191,7 +185,7 @@ video{
 }
 .popular-artist .artist-container{
     width: 100%;
-    height: auto;
+    height: 220px;
     margin-top: 10px;
     display: flex;
     overflow-x: auto;
@@ -206,8 +200,8 @@ video{
 .popular-artist .artist-container li{
     list-style-type: none;
     position: relative;
-    min-width: 120px;
-    height: 120px;
+    min-width: 180px;
+    height: 215px;
     margin-right: 20px;
     cursor: pointer;
     box-shadow: 2px 2px 8px #1a1919;
@@ -216,8 +210,8 @@ video{
 
 .popular-artist .artist-container li img{
     align-items: center;
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 74%;
     border-radius: 50%;
     position: absolute;
     align-content: center;
@@ -227,11 +221,23 @@ video{
     margin-top: 0.2rem;
 }
 
+.popular-artist .artist-container li i{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 3px 6px;
+    font-size: 32px;
+    color: #f8f8f8;
+
+}
+
 .popular-artist .artist-container li h5{
-    margin-top: 6rem;
-    margin-bottom: auto;
+    position: absolute;
     font-size: 14px;
     color: rgb(255, 255, 255);
     text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
 }

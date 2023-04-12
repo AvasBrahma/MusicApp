@@ -1,13 +1,16 @@
 
 const popularSongsContainer=document.querySelector('.popular-song-container');
+const topArtistContainer=document.querySelector('.artist-container');
+const artistAction=document.querySelector('.artist-container');
 
 
 
+artistAction.addEventListener('click', checkAristEvent);
 
 document.addEventListener('DOMContentLoaded', getPlaylist);
 
 const APIController= function() {
-
+    https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z?si=a3e571c01ee14aaa
 
     console.log('Inside API Controller');
 
@@ -38,7 +41,7 @@ function getPlaylist(){
            fetch('https://api.spotify.com/v1/playlists/6RBZfFTHVD1DlatpQh1eWS', {
             method:"GET",
             headers:{
-                'Authorization':'Bearer BQAhIv9fcLo14e8c4r5x_x9DsI4cjL1lNrz9AH7zoOsMoQN4zfD-9OX3yKUTJFTzSpxGDDzR33RjMnqSdEBaxdlC_3YItPl427lDNKL4bslnNqZlKMyM'
+                'Authorization':'Bearer BQDBK6x_maYtrIT4sy517DB7nVf7lm_8ichYAKRX-9XUgm5nwOMrPocFwWN3eo9jwpEs3TOMbKV_5EEt_zAEkqwOjztbO5r2_lHQxmCg08zmbc_bil_w'
             }
            })
            .then(response=> response.json())
@@ -67,4 +70,58 @@ function getPlaylist(){
 
             })
 
+            getTopArtist();
+
         }
+
+
+    function getTopArtist(){
+        let html='';
+        fetch('https://api.spotify.com/v1/artists?ids=7bXgB6jMjp9ATFy66eO08Z,6LuN9FCkKOj5PcnpouEgny,0hCNtLu0JehylgoiP8L4Gh,55Aa2cqylxrFIXC767Z865,26VFTg2z8YR0cCuwLzESi2,27FGXRNruFoOdf1vP8dqcH,0z4gvV4rjIZ9wHck67ucSV,6eUKZXaKkcviH0Ku9w2n3V,3TVXtAsR1Inumwj472S9r4',{   
+        method:"GET",
+            headers:{
+                'Authorization':'Bearer BQDBK6x_maYtrIT4sy517DB7nVf7lm_8ichYAKRX-9XUgm5nwOMrPocFwWN3eo9jwpEs3TOMbKV_5EEt_zAEkqwOjztbO5r2_lHQxmCg08zmbc_bil_w'
+            }
+        })
+        .then(response=> response.json())
+        .then(data=>{
+           console.log("Response Top Artits: ", data);
+                data.artists.forEach(listOfArtist=>{
+                    console.log("Artits: ", listOfArtist);
+                    html+=`
+                    <li class="artist-Item">
+                       <i class="fa-solid fa-heart addToFvt-artist"></i>
+                       <img src="${listOfArtist.images[0].url}" alt="${listOfArtist.name}">
+                        <h5>${listOfArtist.name}</h5>
+                    </li>
+                    `;
+                    
+                    topArtistContainer.innerHTML=html;
+
+                })
+        })
+
+    }
+
+    function checkAristEvent(e){
+      e.preventDefault();
+      console.log("Artist Event Selected",e.target);
+      const item=e.target;
+      console.log("Item :", item);
+       if(item.classList[2]=="addToFvt-artist"){ 
+           console.log('Add to Favourite..........')
+           
+        }
+    }
+
+
+
+    // let addToFavourite=function(){
+
+    //     let artist=$('.artist-Item');
+    //     artist.click(function(e){
+    //         e.preventDefault();
+
+    //         $.ajax
+    //     })
+    // }
