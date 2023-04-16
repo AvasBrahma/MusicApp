@@ -1,4 +1,5 @@
 const User=require('../model/user');
+const Favourites=require('../model/favourite');
 
 
 module.exports.profile=function(req, res){
@@ -71,9 +72,23 @@ return res.redirect('/');
 
 }
 
-module.exports.myFavourite=function(req, res){
+module.exports.myFavourite= async function(req, res){
 
-    console.log('My Favourite Controller...........')
+    console.log('My Favourite Controller...........');
+    let fvtArtist;
+
+    try{
+
+      if(req.query,type=='fvtArtist'){
+        console.log("Favourite Arist Clicked........");
+        fvtartist=await postMessage.findById(req.query.id).populate('favtArtist');
+
+        console.log(fvtArtist);
+      }
+    }catch(err){
+           
+
+    }
     if(req.isAuthenticated()){
          res.render('favourite');
     }else{

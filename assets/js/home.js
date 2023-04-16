@@ -3,8 +3,6 @@ const popularSongsContainer=document.querySelector('.popular-song-container');
 const topArtistContainer=document.querySelector('.artist-container');
 const artistAction=document.querySelector('.artist-container');
 
-
-
 artistAction.addEventListener('click', checkAristEvent);
 
 document.addEventListener('DOMContentLoaded', getPlaylist);
@@ -80,7 +78,7 @@ function getPlaylist(){
         fetch('https://api.spotify.com/v1/artists?ids=7bXgB6jMjp9ATFy66eO08Z,6LuN9FCkKOj5PcnpouEgny,0hCNtLu0JehylgoiP8L4Gh,55Aa2cqylxrFIXC767Z865,26VFTg2z8YR0cCuwLzESi2,27FGXRNruFoOdf1vP8dqcH,0z4gvV4rjIZ9wHck67ucSV,6eUKZXaKkcviH0Ku9w2n3V,3TVXtAsR1Inumwj472S9r4',{   
         method:"GET",
             headers:{
-                'Authorization':'Bearer BQDBK6x_maYtrIT4sy517DB7nVf7lm_8ichYAKRX-9XUgm5nwOMrPocFwWN3eo9jwpEs3TOMbKV_5EEt_zAEkqwOjztbO5r2_lHQxmCg08zmbc_bil_w'
+                'Authorization':'Bearer BQBmBrDCKFNI-vMo0yGsbj83x7NPK7orPC1KkHV1GXcs_5JUliM2kXwW7P2KPCGBZvT_8DRzjqwbyTZnwGVhEFx6kfNE0-xiCKbzmAFEJz83rdWbOLRN'
             }
         })
         .then(response=> response.json())
@@ -89,8 +87,8 @@ function getPlaylist(){
                 data.artists.forEach(listOfArtist=>{
                     console.log("Artits: ", listOfArtist);
                     html+=`
-                    <li class="artist-Item">
-                       <i class="fa-solid fa-heart addToFvt-artist"></i>
+                     <li class="artist-Item">
+                     <a href="" method="POST" class="fvt-btn"> <i class="fa-solid fa-heart addToFvt-artist"></i></a>
                        <img src="${listOfArtist.images[0].url}" alt="${listOfArtist.name}">
                         <h5>${listOfArtist.name}</h5>
                     </li>
@@ -100,6 +98,7 @@ function getPlaylist(){
 
                 })
         })
+    
 
     }
 
@@ -110,6 +109,18 @@ function getPlaylist(){
       console.log("Item :", item);
        if(item.classList[2]=="addToFvt-artist"){ 
            console.log('Add to Favourite..........')
+
+           $.ajax({
+            type:'post',
+            url:'/favourites/add',
+            success: function(data){
+
+                console.log(data)
+
+            }, error: function(err){
+                console.log(error.responseText);
+            }
+           })
            
         }
     }
@@ -118,10 +129,12 @@ function getPlaylist(){
 
     // let addToFavourite=function(){
 
-    //     let artist=$('.artist-Item');
-    //     artist.click(function(e){
-    //         e.preventDefault();
-
+    //    let artist=$('.addToFvt-artist');
+    //    console.log("Inside add to fvt function")
+    //    artist.click(function(e){
+    //       e.preventDefault();
     //         $.ajax
-    //     })
+    //      })
     // }
+
+    // addToFavourite();

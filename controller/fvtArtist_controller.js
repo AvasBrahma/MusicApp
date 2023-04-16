@@ -1,27 +1,19 @@
-const { model } = require('mongoose');
 const FvtArtist=require('../model/fvtArtist');
 const User=require('../model/user');
 
 module.exports.toggleFvtBtn= async function(req, res){
 
-    // try {
+    console.log("Inside Favourites Add Functions")
 
-    //     let likeable;
-    //     let deleted=false;
-    //     if(req.query.type=='Post'){
-    //         likeable=await User.findById(req.query.id).populate('fvts');
-    //     }else{
-    //         likeable=await User.findById(req.query.id).populate('fvts');
-    //     }
+      FvtArtist.create({
+        artistname: req.body.artistname,
+        user: req.user._id
+      }, function(err, fvtartist){
+        if(err){
+            console.log('error in adding favourites');
 
-    //     let existing likes=await 
-
-
-        
-    // } catch (error) {
-    //     console.log(error);
-         
-        
-    // }
+        }
+        return res.redirect('back');
+      })
 
 }
