@@ -3,7 +3,6 @@ const popularSongsContainer=document.querySelector('.popular-song-container');
 const topArtistContainer=document.querySelector('.artist-container');
 const artistAction=document.querySelector('.artist-container');
 
-artistAction.addEventListener('click', checkAristEvent);
 
 document.addEventListener('DOMContentLoaded', getPlaylist);
 
@@ -39,7 +38,7 @@ function getPlaylist(){
            fetch('https://api.spotify.com/v1/playlists/6RBZfFTHVD1DlatpQh1eWS', {
             method:"GET",
             headers:{
-                'Authorization':'Bearer BQDBK6x_maYtrIT4sy517DB7nVf7lm_8ichYAKRX-9XUgm5nwOMrPocFwWN3eo9jwpEs3TOMbKV_5EEt_zAEkqwOjztbO5r2_lHQxmCg08zmbc_bil_w'
+                'Authorization':'Bearer BQAILb-vn1lfDCFkt22j1sScYyO_d7FMo2vu4hgPWGuyIASGUPI7k9alxA--jSNW40HEYEBFhm0f7beiFNlNwD6IbOhsAS1hMHIBL0bBSYZ_E_VDjgWe'
             }
            })
            .then(response=> response.json())
@@ -78,7 +77,7 @@ function getPlaylist(){
         fetch('https://api.spotify.com/v1/artists?ids=7bXgB6jMjp9ATFy66eO08Z,6LuN9FCkKOj5PcnpouEgny,0hCNtLu0JehylgoiP8L4Gh,55Aa2cqylxrFIXC767Z865,26VFTg2z8YR0cCuwLzESi2,27FGXRNruFoOdf1vP8dqcH,0z4gvV4rjIZ9wHck67ucSV,6eUKZXaKkcviH0Ku9w2n3V,3TVXtAsR1Inumwj472S9r4',{   
         method:"GET",
             headers:{
-                'Authorization':'Bearer BQBmBrDCKFNI-vMo0yGsbj83x7NPK7orPC1KkHV1GXcs_5JUliM2kXwW7P2KPCGBZvT_8DRzjqwbyTZnwGVhEFx6kfNE0-xiCKbzmAFEJz83rdWbOLRN'
+                'Authorization':'Bearer BQAILb-vn1lfDCFkt22j1sScYyO_d7FMo2vu4hgPWGuyIASGUPI7k9alxA--jSNW40HEYEBFhm0f7beiFNlNwD6IbOhsAS1hMHIBL0bBSYZ_E_VDjgWe'
             }
         })
         .then(response=> response.json())
@@ -88,7 +87,7 @@ function getPlaylist(){
                     console.log("Artits: ", listOfArtist);
                     html+=`
                      <li class="artist-Item">
-                     <a href="" method="POST" class="fvt-btn"> <i class="fa-solid fa-heart addToFvt-artist"></i></a>
+                     <a href="/favourites/add/?id=${listOfArtist.id}&type=Post" class="fvt-btn"> <i class="fa-solid fa-heart addToFvt-artist"></i></a>
                        <img src="${listOfArtist.images[0].url}" alt="${listOfArtist.name}">
                         <h5>${listOfArtist.name}</h5>
                     </li>
@@ -102,29 +101,26 @@ function getPlaylist(){
 
     }
 
-    function checkAristEvent(e){
-      e.preventDefault();
-      console.log("Artist Event Selected",e.target);
-      const item=e.target;
-      console.log("Item :", item);
-       if(item.classList[2]=="addToFvt-artist"){ 
-           console.log('Add to Favourite..........')
 
-           $.ajax({
-            type:'post',
-            url:'/favourites/add',
-            success: function(data){
 
-                console.log(data)
+// $('#fvt-btn').click(addToFvt);
 
-            }, error: function(err){
-                console.log(error.responseText);
-            }
-           })
-           
-        }
-    }
+//    function addToFvt(e){
+//     e.preventDefault();
+//     console.log("Inside add to Fvt Function");
+//     let self = this;
 
+//     // this is a new way of writing ajax which you might've studied, it looks like the same as promises
+//     $.ajax({
+//         type: 'POST',
+//         url: $(self).attr('href'),
+//     })
+//     .done(function(data){
+//         console.log("Daata :", data);
+//     })
+    
+            
+//   }
 
 
     // let addToFavourite=function(){
@@ -136,5 +132,5 @@ function getPlaylist(){
     //         $.ajax
     //      })
     // }
-
+  
     // addToFavourite();

@@ -1,19 +1,35 @@
 const FvtArtist=require('../model/fvtArtist');
 const User=require('../model/user');
 
-module.exports.toggleFvtBtn= async function(req, res){
+module.exports.toggleFvtBtn=async function(req, res){
 
     console.log("Inside Favourites Add Functions")
 
-      FvtArtist.create({
-        artistname: req.body.artistname,
-        user: req.user._id
-      }, function(err, fvtartist){
-        if(err){
-            console.log('error in adding favourites');
 
+      try{
+
+        console.log("requese Body",req.body);
+
+        let fvtArtist=await FvtArtist.create({
+          artistname: req.body.artistname,
+        });
+  
+        if(req.xhr){
+          return res.status(200).json({
+                    data:{
+                      fvtArtist:fvtArtist 
+                    },
+                    message: "Add to Fvt created"
+          })
         }
-        return res.redirect('back');
-      })
+  
+
+      } catch(err){
+
+        return res.redirect('Back');
+
+      }
+
+
 
 }

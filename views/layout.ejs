@@ -11,13 +11,20 @@
      <%- style %>
 </head>
 <body>
-     <%- include('_header'); %>
+    <% if (locals.user){ %>
+        <%- include('_header'); %>
+        <% } %>
+
 
      <%- body %>
 
-     <%- include('_footer'); %>
+   
      
-    <!-- <%- include('_musicplayer'); %> -->
+     <% if (locals.user){ %>
+        <%- include('_footer'); %>
+        <%- include('_musicplayer'); %> 
+        <% } %>
+  
 
     <%- script %>
 </body>

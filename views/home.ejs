@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="/css/home.css">
 
-
+<% if(locals.user) {%>
 <div class="top-trending-section">
       <video autoplay loop muted plays-inline class="back-video">
               <source src="/videos/AdVideo_header.mp4" type="video/mp4">
@@ -45,15 +45,15 @@
   </div>
     <div class="artist-container">
            <li class="artist-Item">
-            <a href="/users/favourite" class="fvt-btn"> <i class="fa-solid fa-heart addToFvt-artist"></i></a>
-               <img src="/images/justin-bieber.jpg" alt="justin-bieber">
+            <a href="/favourites/add/?id=${listOfArtist.images[0].url}&type=Post" id="fvt-btn"> <i class="fa-solid fa-heart addToFvt-artist"></i></a>
+               <img src="/images/justin-bieber.jpg" alt="justin-bieber" artistname="justin-bieber">
                <h5>justin-bieber</h5>
            </li>
          
     </div>
 </div>
 
-
+<% } %>
 
 
 <script src="/js/home.js"></script>

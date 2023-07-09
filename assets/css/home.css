@@ -5,12 +5,10 @@
     margin-top: 1px;
     height: 330px;
     background: rgb(0, 133, 159);
-    border: 2px solid black;
 }
 
 .top-trending-section .back-video{
       position: absolute;
-      border: 2px solid rgb(0, 0, 0);
       width: 100%;
       height: 330px;
 }

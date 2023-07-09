@@ -9,7 +9,7 @@ router.get('/profile',passport.checkAuthentication ,userController.profile);
 
 router.post('/create', userController.createUser);
 
-
+router.get('/myfavourites', userController.myFavourite)
 router.get('/sign-in', userController.signIn);
 
 router.post('/create-session', passport.authenticate('local', {
